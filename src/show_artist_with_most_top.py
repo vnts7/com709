@@ -3,8 +3,8 @@ import textwrap
 def show_artist_with_most_top():
   sql_query = '''
     SELECT  
-      c.artist as Artist,
-      count(c.rank) as Quantity
+      c.artist,
+      count(DISTINCT c.song) as Quantity
     FROM chart c
     WHERE c.rank = 1
     GROUP BY c.Artist
@@ -15,9 +15,6 @@ def show_artist_with_most_top():
   
   cur.execute(sql_query)
   rows = cur.fetchall()
-  if not rows:
-    print('No top ranked song on this date')
-    return
   #header
   width = 55
   h = ['Artist', 'Quantity of Top Songs']
