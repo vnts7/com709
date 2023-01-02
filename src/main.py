@@ -12,23 +12,23 @@ class Menu:
         self.text = text
         self.fn = fn
 
-
 def _exit():
     close_db()
     quit()
 
-
 menus = [
-    Menu(1, '1. Retrieve the details for the top ranked song for a particular day', show_top_ranked_song),
-    Menu(2, '2. Retrieve the details of the artist with the most top ranked song', show_artist_with_most_top),
-    Menu(3, '3. Retrieve the details of the 10 songs with the longest number of weeks on the boards', show_top_10_songs_longest_on_board),
+    Menu(1, '1. Retrieve the details of the top ranked song for a particular day', show_top_ranked_song),
+    Menu(2, '2. Retrieve the details of the artist with the most top ranked songs', show_artist_with_most_top),
+    Menu(3, '3. Retrieve the details of the 10 songs with the longest number of weeks on the board', show_top_10_songs_longest_on_board),
     Menu(4, '4. Retrieve the song that has moved the most in ranking on the board', show_song_moved_most_in_rank),
-    Menu(5, '5. Visualise the top songs in particular year', visualise_top_songs),
+    Menu(5, '5. Visualise the top songs in a particular year', visualise_top_songs),
     Menu(6, '6. Exit', _exit)
 ]
+
 dic_menu = {}
 for m in menus:
     dic_menu[m.command] = m
+
 while (True):
     for m in menus:
         print(m.text)
@@ -41,5 +41,3 @@ while (True):
     if dic_menu[command]:
         dic_menu[command].fn()
         input('Press enter to return to main menu...')
-
-# close_db()
