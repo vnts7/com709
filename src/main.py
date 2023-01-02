@@ -1,4 +1,5 @@
 from show_top_ranked_song import *
+from show_artist_with_most_top import *
 from helpers import *
 
 
@@ -16,6 +17,7 @@ def _exit():
 
 menus = [
     Menu(1, '1. Retrieve the details for the top ranked song for a particular day', show_top_ranked_song),
+    Menu(2, '2. Retrieve the details of the artist with the most top ranked song', show_artist_with_most_top),
     Menu(5, '5. Exit', _exit)
 ]
 dic_menu = {}

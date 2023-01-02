@@ -7,14 +7,11 @@ def show_top_ranked_song():
       c.id as SongID, c.song as SongTitle, c.artist as Artist, 
       c.last as LastWeek, c.weeks as WeeksOnBoard 
     FROM chart c
-    WHERE c.date = ?
-    ORDER BY c.rank ASC
-    LIMIT 1;
+    WHERE c.date = ? and c.rank = 1;
   '''
   cur = connect_db().cursor()
   
   cur.execute(sql_query, (date,))
-  # cur.execute(sql_query) 
   rows = cur.fetchall()
   if not rows:
     print('No top ranked song on this date')
