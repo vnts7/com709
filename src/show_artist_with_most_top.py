@@ -8,8 +8,13 @@ def show_artist_with_most_top():
     FROM chart c
     WHERE c.rank = 1
     GROUP BY c.Artist
-    ORDER BY Quantity DESC
-    LIMIT 1;
+	  HAVING Quantity =  (SELECT  
+                          count(DISTINCT c.song) as Quantity
+                        FROM chart c
+                        WHERE c.rank = 1
+                        GROUP BY c.Artist
+                        ORDER BY Quantity DESC
+                        LIMIT 1);
   '''
   cur = connect_db().cursor()
   
