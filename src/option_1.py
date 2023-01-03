@@ -51,7 +51,7 @@ def show_result_option_1(rows):
     """
 	# If no row was found, print statement and return
 	if not rows:
-		print('No top ranked song on this date')
+		print('No top ranked song found on this date')
 		return
 
 	# print the result

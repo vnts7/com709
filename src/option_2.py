@@ -48,7 +48,7 @@ def show_result_option_2(rows):
     """
 	# If no row was found, print statement and return
 	if not rows:
-		print('No top ranked song on this year')
+		print('No top ranked song found in this year')
 		return
 	# print the result
 	# header
