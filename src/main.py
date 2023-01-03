@@ -1,8 +1,8 @@
-from show_top_ranked_song import *
-from show_artist_with_most_top import *
-from show_top_10_songs_longest_on_board import *
-from show_song_moved_most_in_rank import *
-from visualise_top_songs import *
+from option_1 import *
+from option_2 import *
+from option_3 import *
+from option_4 import *
+from option_5 import *
 from helpers import *
 
 
@@ -17,11 +17,11 @@ def _exit():
     quit()
 
 menus = [
-    Menu(1, '1. Retrieve the details of the top ranked song for a particular day', show_top_ranked_song),
-    Menu(2, '2. Retrieve the details of the artist with the most top ranked songs', show_artist_with_most_top),
-    Menu(3, '3. Retrieve the details of the 10 songs with the longest number of weeks on the board', show_top_10_songs_longest_on_board),
-    Menu(4, '4. Retrieve the song that has moved the most in ranking on the board', show_song_moved_most_in_rank),
-    Menu(5, '5. Visualise the top songs in a particular year', visualise_top_songs),
+    Menu(1, '1. Retrieve the details of the top ranked song for a particular day', option_1),
+    Menu(2, '2. Retrieve the details of the artists having top ranked songs in a particular year', option_2),
+    Menu(3, '3. Retrieve the details of the song with the longest number of weeks on the board of a particular artist', option_3),
+    Menu(4, '4. Retrieve the song that has moved the most in ranking on the board in a particular year', option_4),
+    Menu(5, '5. Visualise the top songs in a particular year', option_5),
     Menu(6, '6. Exit', _exit)
 ]
 
