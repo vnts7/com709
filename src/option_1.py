@@ -32,7 +32,8 @@ def query_option_1(date):
 	FROM chart c
 	WHERE c.date = ? and c.rank = 1;
 	'''
-	# Loop and execute sql to find the date on board that week, if found -> break
+	# Loop and execute sql to find the date on board that week 
+	# (week that the date input belongs to), if found -> break
 	for _ in range(7):
 		rows = query(sql_query, date.strftime("%Y-%m-%d"))
 		if (rows):
