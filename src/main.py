@@ -25,6 +25,9 @@ menus = [
     Menu(6, '6. Exit', _exit)
 ]
 
+#Connect to the db
+connect_db("charts.db")
+
 dic_menu = {}
 for m in menus:
     dic_menu[m.command] = m

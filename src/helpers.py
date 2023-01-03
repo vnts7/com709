@@ -2,24 +2,29 @@ from datetime import datetime
 import sqlite3
 import os.path
 
-# Absolute path for database file
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(BASE_DIR, "charts.db")
 
 db: sqlite3.Connection = None
 
-
-def connect_db():
+def connect_db(filename):
     """Create a connection to the sqlite database.
+
+    Parameters
+    ----------
+    filename: string
+        name of database file
 
     Returns
     -------
     Connection
         a connection to the database
     """
+    # Absolute path for database file
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    file_path =  os.path.join(BASE_DIR, filename)
+
     global db
     if not db:
-        db = sqlite3.connect(db_path)
+        db = sqlite3.connect(file_path)
     return db
 
 
@@ -48,7 +53,7 @@ def query(sql_query, param):
         a list of rows returned from the database by this query
     """
     # connect db and execute sql
-    cur = connect_db().cursor()
+    cur = db.cursor()
     cur.execute(sql_query, (param,))
     rows = cur.fetchall()
     return rows
