@@ -47,7 +47,7 @@ def show_result_option_5(rows, year):
     """
 	# If no row was found, print statement and return
 	if not rows:
-		print('No top song on this year')
+		print('No top song found in this year')
 		return
 
 	# seperate data in list rows to two group lists, with one bar per group

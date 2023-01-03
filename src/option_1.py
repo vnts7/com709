@@ -33,7 +33,7 @@ def query_option_1(date):
 	WHERE c.date = ? and c.rank = 1;
 	'''
 	# Loop and execute sql to find the date on board that week, if found -> break
-	for x in range(7):
+	for _ in range(7):
 		rows = query(sql_query, date.strftime("%Y-%m-%d"))
 		if (rows):
 			break
@@ -51,7 +51,7 @@ def show_result_option_1(rows):
     """
 	# If no row was found, print statement and return
 	if not rows:
-		print('No top ranked song on this date')
+		print('No top ranked song found on this date')
 		return
 
 	# print the result
