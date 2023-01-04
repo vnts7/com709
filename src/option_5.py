@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def option_5():
     """Visualise the songs had been on top 1 and 
-      number of weeks those songs being on top in a particular year.
+      number of weeks those songs being on top in a particular year .
     """
     year = input_year()
     rows = query_option_5(year)

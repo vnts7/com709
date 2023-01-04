@@ -38,7 +38,7 @@ def close_db():
 
 
 def query(sql_query, param):
-    """Execute sql query
+    """Connect to database and execute sql query
 
     Parameters
     ----------
@@ -52,7 +52,7 @@ def query(sql_query, param):
     list
         a list of rows returned from the database by this query
     """
-    # execute sql
+    # connect db and execute sql
     cur = db.cursor()
     cur.execute(sql_query, (param,))
     rows = cur.fetchall()

@@ -52,7 +52,7 @@ def show_result_option_2(rows):
 		return
 	# print the result
 	# header
-	width = 60
+	width = 55
 	h = ['Artist', 'Quantity of Top Ranked Songs']
 	print(f'{textwrap.shorten(h[0], 25):30}{h[1]:20}')
 	print('─' * (width))
